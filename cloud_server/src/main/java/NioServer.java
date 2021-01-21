@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -63,6 +65,54 @@ public class NioServer {
                     .collect(Collectors.joining(", "));
             files += "\n";
             channel.write(ByteBuffer.wrap(files.getBytes(StandardCharsets.UTF_8)));
+        }
+
+        if (command.startsWith("cd")) {
+            String[] args = command.split(" ");
+            if (args.length != 2) {
+                channel.write(ByteBuffer.wrap("Wrong command\n".getBytes(StandardCharsets.UTF_8)));
+            } else {
+                String targetPath = args[1];
+                Path serverDirBefore = serverPath;
+                serverPath = serverPath.resolve(targetPath);
+                if (!Files.isDirectory(serverPath) && !Files.exists(serverPath)) {
+                    channel.write(ByteBuffer.wrap("Wrong arg for cd command\n".getBytes(StandardCharsets.UTF_8)));
+                    serverPath = serverDirBefore;
+                }
+            }
+        }
+
+        if (command.startsWith("cat")) {
+            try(FileReader reader = new FileReader("note.txt"))
+            {
+                int c;
+                while((c=reader.read())!=-1){
+
+                    System.out.print((char)c);
+                }
+            }
+            catch(IOException e){
+
+                System.out.println(e.getMessage());
+            }
+
+            if (command.equals("touch")){
+                File dir = new File("C://SomeDir//NewDir");
+                boolean created = dir.mkdir();
+                if(created)
+                    System.out.println("Folder has been created");
+            }
+
+        }
+            try {
+            Path path = Paths.get("logs/error.log");
+            Files.createDirectories(path.getParent());
+
+            Files.write(path, "Log log".getBytes());
+
+            System.out.println(Files.readAllLines(path));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
