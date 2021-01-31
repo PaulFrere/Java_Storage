@@ -9,7 +9,6 @@ import java.util.prefs.Preferences;
  * This interface is implemented by concrete option classes
  *
  * @param <T> Value class
- * @author alexey.malnev
  */
 public interface IOption<T> extends Cloneable
 {

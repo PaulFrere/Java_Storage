@@ -31,4 +31,7 @@ public class ClientBootstrap extends Bootstrap
         if (!Files.exists(localStorage)) Files.createDirectories(localStorage);
         cli.start();
     }
+
+    public void run(String[] args) {
+    }
 }

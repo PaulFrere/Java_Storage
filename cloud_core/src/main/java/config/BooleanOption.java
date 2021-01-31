@@ -8,8 +8,6 @@ import java.util.prefs.Preferences;
 
 /**
  * This class represents the boolean program option
- *
- * @author alexey.malnev
  */
 @NoArgsConstructor
 public class BooleanOption extends Option<Boolean>

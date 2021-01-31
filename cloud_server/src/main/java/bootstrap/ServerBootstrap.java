@@ -1,12 +1,13 @@
 package bootstrap;
 
+import cloud_core.transport.INetworkEndpoint;
+import cloud_core.utils.Util;
+
+import config.ServerConfig;
+import io.netty.bootstrap.Bootstrap;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.SneakyThrows;
-import cloud_core.Bootstrap;
-import cloud_core.transport.INetworkEndpoint;
-import cloud_core.utils.Util;
-import config.ServerConfig;
 import persistence.entitites.User;
 import persistence.repositories.UserRepository;
 
@@ -66,5 +67,8 @@ public class ServerBootstrap extends Bootstrap
         }
 
         networkEndpoint.start();
+    }
+
+    public void run(String[] args) {
     }
 }

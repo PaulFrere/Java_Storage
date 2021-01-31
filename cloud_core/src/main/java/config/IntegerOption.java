@@ -8,8 +8,6 @@ import java.util.prefs.Preferences;
 
 /**
  * This class represents an integer program option
- *
- * @author alexey.malnev
  */
 @NoArgsConstructor
 public class IntegerOption extends Option<Integer>

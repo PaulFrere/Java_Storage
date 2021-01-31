@@ -1,3 +1,5 @@
+import bootstrap.ServerBootstrap;
+
 import javax.enterprise.inject.se.SeContainerInitializer;
 import javax.enterprise.inject.spi.CDI;
 

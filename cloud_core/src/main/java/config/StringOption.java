@@ -8,8 +8,6 @@ import java.util.prefs.Preferences;
 
 /**
  * This class represents the string program option
- *
- * @author alexey.malnev
  */
 @NoArgsConstructor
 public class StringOption extends Option<String>

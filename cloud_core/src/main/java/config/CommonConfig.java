@@ -10,8 +10,6 @@ import java.util.Iterator;
 
 /**
  * This class is a container of options common to both client- and server-side applications
- *
- * @author alexey.malnev
  */
 @ApplicationScoped
 public class CommonConfig extends OptionRepository

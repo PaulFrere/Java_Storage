@@ -8,7 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cloud_client" />
         <module name="cloud_server" />
+        <module name="cloud-core" />
+        <module name="cloud_core" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud_core" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

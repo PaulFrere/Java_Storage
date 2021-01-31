@@ -9,8 +9,6 @@ import org.jetbrains.annotations.NotNull;
  * method. After that, {@link IOptionRepository#get} and {@link IOptionRepository#put}
  * methods can be used to query or set values of known options. IOptionRepository implementation internally uses
  * some logic to synchronize in-memory state with persistent storage.
- *
- * @author alexey.malnev
  */
 public interface IOptionRepository extends Iterable<IOption>
 {

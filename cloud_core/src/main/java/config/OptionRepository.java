@@ -12,8 +12,6 @@ import java.util.prefs.Preferences;
 /**
  * Program option repository implementation. Uses Preferences API as a persistent storage.
  * In-memory state of program options is synchronized with the storage on every put operation
- *
- * @author alexey.malnev
  */
 public class OptionRepository implements IOptionRepository
 {
